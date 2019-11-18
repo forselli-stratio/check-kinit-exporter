@@ -32,7 +32,6 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             kinit_func()
             has_kerberos_ticket()
             
-
             if has_kerberos_ticket():
                 output='kerberos_kinit_status 1\n'
                 self.wfile.write(output.encode())
@@ -41,10 +40,6 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(output.encode())
             return
 socketserver.TCPServer.allow_reuse_address = True
-#with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
-    #print("serving at port", PORT)
-    #httpd.serve_forever()
-
 httpd = socketserver.TCPServer(("", PORT), CustomHandler)
 print("serving at port", PORT)
 httpd.serve_forever()
