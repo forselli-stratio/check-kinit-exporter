@@ -5,9 +5,12 @@
 import http.server
 import socketserver
 import subprocess
+import os
 
+KEYTAB=os.environ['VAULT_KEYTAB_KEY']
+PRINCIPAL=os.environ['KERBEROS_PRINCIPAL']
 kdestroy='kdestroy'.split(" ")
-kinit='kinit -kt zkuserland-backup@STRATIO.COM.keytab zkuserland-backup@STRATIO.COM'.split(" ")
+kinit=('kinit -kt' + str(KEYTAB) + str(PRINCIPAL)).split(" ")
 klist='klist -s'.split(" ")
 PORT=9118
 

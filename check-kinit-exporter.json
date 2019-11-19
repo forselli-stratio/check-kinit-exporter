@@ -1,8 +1,12 @@
 {
   "env": {
-    "VAULT_HOST": "vault.service.{{json_consul_domain}}",
+    "VAULT_HOST": "vault.service.eos.foxtrot.hetzner.stratio.com",
+    "VAULT_KEYTAB_KEY": "zkuserland-backup",
     "LOG_LEVEL_EXPORTER": "info",
+    "VAULT_KEYTAB_NAME": "zkuserland-backup",
     "LOG_LEVEL": "info",
+    "KERBEROS_PRINCIPAL": "zkuserland-backup@STRATIO.COM",
+    "VAULT_KEYTAB_PRINCIPAL_KEY": "zkuserland-backup",
     "VAULT_PORT": "8200"
   },
   "id": "/exporters/check-kinit-exporter",

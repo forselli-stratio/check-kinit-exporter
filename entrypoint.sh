@@ -82,15 +82,10 @@ fi
 
 login_vault
 
-#set +eu
-    #getKrb userland "${FRAMEWORK_NAME}.hdfs" "name-0-node.$FRAMEWORK_NAME.mesos" . "AGENT_PRINCIPAL"; mv name-0-node.$FRAMEWORK_NAME.mesos.keytab $SECURITY_KERBEROS_PRIMARY.name-0-node.$FRAMEWORK_NAME.mesos.keytab
-#set -eu
-
-#set +eu
-    #getKrb userland "zkuserland-pre-backup" "zkuserland-pre-backup.zkuserland-pre.mesos" . "zkuserland-pre-backup.zkuserland-pre.mesos"; mv zkuserland-pre-backup.zkuserland-pre.mesos.keytab zkuserland-pre-backup.zkuserland-pre.mesos.keytab
-#set -eu
-
-
+#Download keytab specified in deployment json
 set +eu
-    getKrb userland "zkuserland-backup" "zkuserland-backup" . "zkuserland-backup"; mv zkuserland-backup.keytab /tmp/zkuserland-backup.keytab
+    getKrb userland ${VAULT_KEYTAB_NAME} ${VAULT_KEYTAB_KEY} . ${VAULT_KEYTAB_PRINCIPAL_KEY}
 set -eu
+
+
+/usr/bin/python2.7 /check-kinit-http.py
