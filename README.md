@@ -6,6 +6,7 @@ This exporter executes a python scripts that basically executes three bash comma
 - klist -s to check if kinit worked.
 
 You need to have a working keytab uploaded to vault.
+
 | Variable | Definition |
 |-------------------|:--------------|
 | VAULT_KEYTAB_KEY    | Key specified in vault for the keytab        |
@@ -21,6 +22,7 @@ example.mesos_keytab:XXXXXX
 example.mesos_principal:example@example.com
 
 Fill your vars like this:
+
 | Variable | Value |
 |-------------------|:--------------|
 | VAULT_KEYTAB_KEY    | example.mesos        |
