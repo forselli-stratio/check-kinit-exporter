@@ -88,4 +88,4 @@ set +eu
 set -eu
 
 
-/usr/bin/python2.7 /check-kinit-http.py
+/usr/bin/python3 /check-kinit-http.py

@@ -10,7 +10,7 @@ import os
 KEYTAB=os.environ['VAULT_KEYTAB_KEY']
 PRINCIPAL=os.environ['KERBEROS_PRINCIPAL']
 kdestroy='kdestroy'.split(" ")
-kinit=('kinit -kt' + str(KEYTAB) + str(PRINCIPAL)).split(" ")
+kinit=('kinit -kt' + str(KEYTAB) + ".keytab" + " " + str(PRINCIPAL)).split(" ")
 klist='klist -s'.split(" ")
 PORT=9118
 

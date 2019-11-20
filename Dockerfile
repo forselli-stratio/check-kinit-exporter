@@ -7,7 +7,7 @@ ADD entrypoint.sh /entrypoint.sh
 ADD check-kinit-http.py check-kinit-http.py
 
 RUN apk update && \
-    apk --no-cache add krb5 bash coreutils curl vim jq strace python3 python3-dev && \
+    apk --no-cache add krb5 bash coreutils curl vim jq strace python3 && \
     pip3 install --no-cache-dir --upgrade --force-reinstall pip && \
     chmod +x /entrypoint.sh && \
     chmod +x /b-log.sh && \
@@ -22,5 +22,7 @@ RUN cd /usr/bin \
   && ln -sf python3.5 python \
   && ln -sf python3.5-config python-config \
   && ln -sf pip3.5 pip
+
+EXPOSE 9118
 
 ENTRYPOINT [ "/entrypoint.sh" ]
