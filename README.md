@@ -12,7 +12,7 @@ You need to have a working keytab uploaded to vault.
 | VAULT_KEYTAB_KEY    | Key specified in vault for the keytab        |
 | KERBEROS_PRINCIPAL    | Keytab principal       |
 | VAULT_KEYTAB_NAME    | Keytab name in vault         |
-| VAULT_KEYTAB_PRINCIPAL_KEY    | NKey specified in vault for the principal        |
+| VAULT_KEYTAB_PRINCIPAL_KEY    | Key specified in vault for the principal        |
 
 Example:
 We have the following keytab stored in vault:
